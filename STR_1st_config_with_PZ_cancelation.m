@@ -15,7 +15,7 @@ B_poles = roots(B)
 if length(B_poles)>2
    warning('Please,Edite the code first {B+ and B-}') 
 end
-% choose all zeros outside the unit circle to be cancelled in B_mins
+% choose all zeros outside the unit circle to be in B_mins
 
 B_mins= B_poles(1);
 B_Plus= B_poles(2); 
