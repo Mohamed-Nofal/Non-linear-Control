@@ -6,7 +6,6 @@
 Solve using 1st config. & with Pole-zero Cancellation 
 %}
 clc; clear vars; close all;
-
 %% Plant ( G(z) )
 B = [0.1459 0.344 0.04451];           % numerator 
 A = [1 -1.806 0.8964 -0.09072];       % denominator
@@ -16,13 +15,13 @@ syms t z
 U(t) = exp(-0.04*t)*sin(0.2*t);
 U(z) = vpa(ztrans(T2),2);
 [N,M]= numden(U(z));
-M    =(sym2poly(M));
-M    =M/M(1,1)
-%% Choose Poles to be Canceled
+M    = sym2poly(M);
+M    = M/M(1,1)
+%% Dynamics Canceled
 A3=conv(A,M)
 %% Poles 
 Am = [1 -0.4177 0.0183];
-A0 = [1 -1 0.4 -0.08 0.008 -0.00032];
+A0 = [1 -1 0.4 -0.08 0.008 -0.00032];% Whatch out for the dimensions
 alpha = conv(Am,A0);
 %% Call Diophantine solver function
 [S3,R3_dash] = Diophantine(A3,B,d,alpha)
