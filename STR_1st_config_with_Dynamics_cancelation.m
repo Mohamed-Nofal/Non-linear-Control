@@ -18,10 +18,8 @@ U(z) = vpa(ztrans(T2),2);
 [N,M]= numden(U(z));
 M    =(sym2poly(M));
 M    =M/M(1,1)
-
 %% Choose Poles to be Canceled
 A3=conv(A,M)
-
 %% Poles 
 Am = [1 -0.4177 0.0183];
 A0 = [1 -1 0.4 -0.08 0.008 -0.00032];
