@@ -12,9 +12,9 @@ A = [1 -1.806 0.8964 -0.09072];       % denominator
 d = 1;                                % order of delay of the system
 %% Inputs
 syms t z 
-U(t) = exp(-0.04*t)*sin(0.2*t);
-U(z) = vpa(ztrans(U),2);
-[N,M]= numden(U(z));
+U = exp(-0.04*t)*sin(0.2*t);
+U = vpa(ztrans(U),5);
+[N,M]= numden(U);
 M    = sym2poly(M);
 M    = M/M(1,1)
 %% Dynamics Canceled
