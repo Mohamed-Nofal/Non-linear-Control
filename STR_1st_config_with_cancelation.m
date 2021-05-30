@@ -11,11 +11,13 @@ clc; clear vars; close all;
 B = [0.1459 0.344 0.04451];           % numerator 
 A = [1 -1.806 0.8964 -0.09072];       % denominator
 d = 1;                                % order of delay of the system
-%% Cancellation
+%% Choose Poles to be Canceled
 B_poles = roots(B) 
 % choose all zeros outside the unit circle to be cancelled in B_mins
-B_mins= B_poles(1)
-B_Plus= B_poles(2)  
+
+B_mins= B_poles(1);
+B_Plus= B_poles(2); 
+
 if B_Plus >1 || B_Plus==1 || B_Plus<-1
     error('B_Plus must be in the unit circle ') 
 end
@@ -27,8 +29,7 @@ Am = [1 -0.4177 0.0183];
 A0 = [1 -0.4 0.04];
 alpha = conv(Am, A0);
 %% Call Diophantine solver function
-[S,R_dash] = Diophantine(A,B_dash,d,alpha);
-S
+[S,R_dash] = Diophantine(A,B_dash,d,alpha)
 R=conv([1 -B_Plus],R_dash)
 %% Diophantine solver function
 function [S,R] = Diophantine(A,B,d,alpha)
