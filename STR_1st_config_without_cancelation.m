@@ -17,9 +17,7 @@ Am = [1 -0.4177 0.0183 ];
 A0 = [1 -0.6 0.12 -0.008];
 alpha = conv(Am, A0);
 %% Call Diophantine solver function
-[S,R] = Diophantine(A,B,d,alpha);
-S
-R
+[S,R] = Diophantine(A,B,d,alpha)
 %% Diophantine solver function
 function [S,R] = Diophantine(A,B,d,alpha)
 %{
