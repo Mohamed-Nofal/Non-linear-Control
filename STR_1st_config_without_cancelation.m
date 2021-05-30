@@ -3,7 +3,7 @@
                           z^-1 (0.1459 + 0.344 z^-1 + 0.0445 z^-2)
                 Gz =  -----------------------------------------------
                         1 - 1.806 z^-1 + 0.8964 z^-2 - 0.09072 z^-3
-Solve using 1st config. & without Pole-zero Cancellation 
+Solve using 1st config. & without Cancellation 
 %}
 clc; clear vars; close all;
 
