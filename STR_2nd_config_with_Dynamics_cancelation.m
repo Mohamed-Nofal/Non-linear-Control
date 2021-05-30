@@ -13,7 +13,7 @@ d = 1;                                % order of delay of the system
 %% Inputs
 syms t z 
 U(t) = exp(-0.04*t)*sin(0.2*t);
-U(z) = vpa(ztrans(U(t)),2);
+U(z) = vpa(ztrans(U),2);
 [N,M]= numden(U(z));
 M    = sym2poly(M);
 M    = M/M(1,1)
