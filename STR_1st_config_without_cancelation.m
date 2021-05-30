@@ -6,7 +6,6 @@
 Solve using 1st config. & without Cancellation 
 %}
 clc; clear vars; close all;
-
 %% Plant ( G(z) )
 B = [0.1459 0.344 0.04451 ];           % numerator 
 A = [1 -1.806 0.8964 -0.09072 ];       % denominator
