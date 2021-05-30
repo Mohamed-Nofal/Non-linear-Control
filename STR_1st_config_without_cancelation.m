@@ -8,16 +8,18 @@ Solve using 1st config. & without Pole-zero Cancellation
 clc; clear vars; close all;
 
 %% Plant ( G(z) )
-B = [0.1459 0.344 0.04451];           % numerator 
-A = [1 -1.806 0.8964 -0.09072];       % denominator
-d = 1;                                % order of delay of the system
+B = [0.1459 0.344 0.04451 ];           % numerator 
+A = [1 -1.806 0.8964 -0.09072 ];       % denominator
+d = 1;                                 % order of delay of the system
 
 %% Poles 
-Am = [1 -0.4177 0.0783];
-A0 = [1 -0.6 0.12 0.008];
+Am = [1 -0.4177 0.0183 ];
+A0 = [1 -0.6 0.12 -0.008];
 alpha = conv(Am, A0);
 %% Call Diophantine solver function
-[S,R] = Diophantine(A,B,d,alpha)
+[S,R] = Diophantine(A,B,d,alpha);
+S
+R
 %% Diophantine solver function
 function [S,R] = Diophantine(A,B,d,alpha)
 %{
