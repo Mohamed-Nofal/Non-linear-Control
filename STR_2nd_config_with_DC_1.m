@@ -18,6 +18,9 @@ A0 = [1 -0.6 0.12 -0.008];
 alpha = conv(Am, A0);
 %% Call Diophantine solver function
 [S,R] = Diophantine(A,B,d,alpha)
+%% Calculate T
+t0 = polyval(Am,1)/polyval(B,1)
+T  = t0*A0
 %% Diophantine solver function
 function [S,R] = Diophantine(A,B,d,alpha)
 %{
