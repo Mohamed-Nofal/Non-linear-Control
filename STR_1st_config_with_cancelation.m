@@ -19,7 +19,7 @@ B_mins= B_poles(1);
 B_Plus= B_poles(2); 
 
 if B_Plus >1 || B_Plus==1 || B_Plus<-1
-    error('B_Plus must be in the unit circle ') 
+    error('B_Plus must be inside the unit circle ') 
 end
 
 B_dash=B(1,1)*[1  -B_mins]
@@ -27,7 +27,7 @@ B_dash=B(1,1)*[1  -B_mins]
 %% Poles 
 Am = [1 -0.4177 0.0183];
 A0 = [1 -0.4 0.04];
-alpha = conv(Am, A0);
+alpha = conv(Am,A0);
 %% Call Diophantine solver function
 [S,R_dash] = Diophantine(A,B_dash,d,alpha)
 R=conv([1 -B_Plus],R_dash)
